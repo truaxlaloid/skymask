@@ -35,10 +35,12 @@ neoForge {
 
 repositories {
     mavenCentral()
+    maven { url 'https://maven.shedaniel.me/' }
 }
 
 dependencies {
-    // The neoforced.moddev plugin automatically manages all Minecraft & NeoForge dependencies.
+    // The neoforced.moddev plugin automatically manages Minecraft & NeoForge dependencies.
+    implementation 'me.shedaniel.cloth:cloth-config-neoforge:15.0.130'
 }
 
 tasks.withType(JavaCompile).configureEach {
