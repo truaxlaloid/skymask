@@ -1,0 +1,19 @@
+{
+    "targets": ["swap"],
+    "passes": [
+        {
+            "name": "skymask:sky_mask",
+            "intarget": "minecraft:main",
+            "outtarget": "swap",
+            "uniforms": [
+                {"name": "Threshold", "values": [0.5]},
+                {"name": "MaskOnly", "values": [0.0]}
+            ]
+        },
+        {
+            "name": "blit",
+            "intarget": "swap",
+            "outtarget": "minecraft:main"
+        }
+    ]
+}

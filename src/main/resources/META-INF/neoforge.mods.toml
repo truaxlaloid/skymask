@@ -1,0 +1,25 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "Author"
+description = "Produces a screen-space sky mask based on a brightness threshold."
+
+[[dependencies.skymask]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neo_version_range}"
+side = "BOTH"
+
+[[dependencies.skymask]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+side = "BOTH"
+
+[[mixins]]
+config = "skymask.mixins.json"
