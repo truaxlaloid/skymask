@@ -4,6 +4,12 @@
   "package": "com.example.skymask.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
-  "client": ["GameRendererAccessor", "PostChainAccessor"],
-  "injectors": { "defaultRequire": 1 }
+  "client": [
+    "GameRendererAccessor",
+    "PostChainAccessor",
+    "LevelRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
