@@ -1,5 +1,6 @@
 package com.example.skymask;
-import com.example.skymask.gui.SkyMaskConfigScreen;
+
+import com.example.skymask.gui.ClothConfigScreen;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
@@ -12,7 +13,7 @@ import org.lwjgl.glfw.GLFW;
 public class ClientEvents {
     public static final KeyMapping OPEN_CONFIG_KEY = new KeyMapping(
             "key.skymask.open_config",
-            GLFW.GLFW_KEY_O,
+            GLFW.GLFW_KEY_O, 
             "key.categories.misc"
     );
 
@@ -21,8 +22,9 @@ public class ClientEvents {
         Minecraft mc = Minecraft.getInstance();
         if (mc.level != null && mc.player != null) {
             SkyMaskManager.tick(mc);
+
             while (OPEN_CONFIG_KEY.consumeClick()) {
-                mc.setScreen(new SkyMaskConfigScreen());
+                mc.setScreen(ClothConfigScreen.createScreen(mc.screen));
             }
         }
     }
