@@ -19,13 +19,12 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    # Setup Gradle using a specific distribution version
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
       with:
         gradle-version: '8.9'
+        cache-disabled: true # Turns off cache storage to prevent GitHub transient server warnings
 
-    # Run the build using the globally installed gradle command instead of './gradlew'
     - name: Build with Gradle
       run: gradle build
 
